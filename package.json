@@ -1,0 +1,48 @@
+{
+  "name": "@proofgate/sdk",
+  "version": "0.1.0",
+  "description": "Official ProofGate SDK — blockchain transaction validation and guardrails for AI agents. Framework-agnostic, works with any agent.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "test": "vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "proofgate",
+    "ai-agent",
+    "blockchain",
+    "validation",
+    "security",
+    "guardrails",
+    "defi",
+    "web3",
+    "ethereum",
+    "bsc",
+    "transaction-safety"
+  ],
+  "author": "0xCR6 <cristian@proofgate.xyz>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ProofGate/proofgate-sdk.git"
+  },
+  "homepage": "https://www.proofgate.xyz",
+  "bugs": {
+    "url": "https://github.com/ProofGate/proofgate-sdk/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^1.0.0"
+  }
+}

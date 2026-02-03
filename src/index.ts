@@ -206,7 +206,7 @@ export class ProofGateError extends Error {
  * ```typescript
  * const pg = new ProofGate({
  *   apiKey: 'pg_your_api_key',
- *   chainId: 56, // BSC Mainnet
+ *   chainId: 8453, // Base Mainnet
  * });
  * 
  * // Validate a transaction
@@ -241,7 +241,7 @@ export class ProofGate {
 
     this.config = {
       baseUrl: 'https://www.proofgate.xyz/api',
-      chainId: 56,
+      chainId: 8453,
       timeout: 30000,
       ...config,
     };

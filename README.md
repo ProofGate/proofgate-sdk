@@ -202,6 +202,26 @@ const agent = new AgentRuntime({
 });
 ```
 
+### GOAT SDK
+
+Use [`@proofgate/goat-plugin`](https://www.npmjs.com/package/@proofgate/goat-plugin) for GOAT SDK integration. Protects all 50+ DeFi plugins.
+
+```typescript
+import { ProofGatePlugin } from '@proofgate/goat-plugin';
+import { getOnChainTools } from '@goat-sdk/adapter-vercel-ai';
+import { viem } from '@goat-sdk/wallet-viem';
+
+const proofgate = new ProofGatePlugin({
+  apiKey: process.env.PROOFGATE_API_KEY,
+  autoBlock: true,
+});
+
+const tools = await getOnChainTools({
+  wallet: viem(walletClient),
+  plugins: [proofgate, /* uniswap, aave, etc. */],
+});
+```
+
 ### LangChain / AutoGPT / Custom
 
 Use this SDK directly in your transaction handler:

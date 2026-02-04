@@ -41,7 +41,7 @@ export interface ProofGateConfig {
   apiKey: string;
   /** Base URL for API (default: https://www.proofgate.xyz/api) */
   baseUrl?: string;
-  /** Default chain ID (default: 56 for BSC) */
+  /** Default chain ID (default: 8453 for Base) */
   chainId?: number;
   /** Default guardrail ID to use for validations */
   guardrailId?: string;

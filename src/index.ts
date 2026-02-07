@@ -41,7 +41,18 @@ export interface ProofGateConfig {
   apiKey: string;
   /** Base URL for API (default: https://www.proofgate.xyz/api) */
   baseUrl?: string;
-  /** Default chain ID (default: 8453 for Base) */
+  /** 
+   * Default chain ID for validations. REQUIRED by API.
+   * Set here or pass in each validate() call.
+   * Default: 8453 (Base Mainnet)
+   * 
+   * Common chain IDs:
+   * - 1: Ethereum
+   * - 8453: Base
+   * - 42161: Arbitrum
+   * - 10: Optimism
+   * - 137: Polygon
+   */
   chainId?: number;
   /** Default guardrail ID to use for validations */
   guardrailId?: string;

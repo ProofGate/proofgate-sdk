@@ -1,0 +1,21 @@
+{
+  "name": "proofgate-signer-service-example",
+  "version": "1.0.0",
+  "description": "Secure signer microservice that keeps private keys away from your LLM",
+  "main": "index.ts",
+  "scripts": {
+    "start": "tsx index.ts",
+    "dev": "tsx watch index.ts"
+  },
+  "dependencies": {
+    "@proofgate/sdk": "^0.1.0",
+    "express": "^4.18.2",
+    "viem": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.0"
+  }
+}

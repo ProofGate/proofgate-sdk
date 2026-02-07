@@ -54,6 +54,29 @@ if (result.safe) {
 }
 ```
 
+## Secure Architecture: Keep Keys Away from LLM
+
+For maximum security, don't give your LLM direct access to private keys. Use a **signer microservice**:
+
+```
+┌─────────────────┐     ┌──────────────────────┐     ┌─────────────┐
+│   LLM / Agent   │────▶│  Signer Microservice │────▶│  Blockchain │
+│  (NO priv key)  │     │  (has priv key)      │     │             │
+└─────────────────┘     └──────────────────────┘     └─────────────┘
+                               │
+                               ▼
+                        ┌──────────────┐
+                        │  ProofGate   │
+                        │  Validates   │
+                        └──────────────┘
+```
+
+The LLM sends transaction **intent**. The signer validates via ProofGate, then executes.
+
+**Even if the LLM gets prompt-injected, the attacker cannot sign arbitrary transactions.**
+
+👉 See full example: [`examples/signer-service/`](./examples/signer-service/)
+
 ## Supported Chains
 
 | Chain | ID | Chain | ID |
